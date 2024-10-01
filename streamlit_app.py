@@ -14,26 +14,30 @@ from openai.error import RateLimitError
 
 
         
-# Website confing
+# Website config
 st.set_page_config(page_title="🎉 Asystent Wieczoru Kawalerskiego Santy", page_icon="🎉")
-        
 
+# Authorization status tracking
+if 'authorized' not in st.session_state:
+    st.session_state['authorized'] = False
 
-# Strona główna z polem do wpisywania hasła
-password = st.text_input("Wpisz hasło, aby kontynuować:", type="password")
+# Password input field that only appears if not authorized
+if not st.session_state['authorized']:
+    password = st.text_input("Wpisz hasło, aby kontynuować:", type="password")
+    if st.button("Zaloguj"):
+        if password == st.secrets["bot_secrets"]["password"]:
+            st.session_state['authorized'] = True
+            st.success("Hasło poprawne. Witaj w chatbocie!")
+        else:
+            st.error("Nieprawidłowe hasło, spróbuj ponownie.")
 
-# Sprawdzenie hasła
-if st.button("Zaloguj"):
-    if password == st.secrets["bot_secrets"]["password"]:
-        st.success("Hasło poprawne. Witaj w chatbocie!")
-
-
-        # Title
-        st.title("🎉 Asystent Wieczoru Kawalerskiego Santy")
-        
-        st.write(
-            "Prośba o zadanie do max 20 zapytań bo API jest płatne wariaty. "
-        )
+if st.session_state['authorized']:
+    # Title and initial setup if authorized
+    st.title("🎉 Asystent Wieczoru Kawalerskiego Santy")
+    
+    st.write(
+        "Prośba o zadanie do max 20 zapytań bo API jest płatne wariaty."
+    )
         
         # Importing API
         openai_api_key = st.secrets["OPENAI_API_KEY"]
