@@ -159,6 +159,3 @@ if st.session_state['authorized']:
         if st.button("Wyczyść historię czatu"):
             st.session_state.messages = []
             st.experimental_rerun()
-
-    else:
-        st.error("Nieprawidłowe hasło, spróbuj ponownie.")
