@@ -13,6 +13,11 @@ from google.oauth2.service_account import Credentials
 from openai.error import RateLimitError
 
 
+        
+# Website confing
+st.set_page_config(page_title="🎉 Asystent Wieczoru Kawalerskiego Santy", page_icon="🎉")
+        
+
 
 # Strona główna z polem do wpisywania hasła
 password = st.text_input("Wpisz hasło, aby kontynuować:", type="password")
@@ -23,10 +28,6 @@ if st.button("Zaloguj"):
         st.success("Hasło poprawne. Witaj w chatbocie!")
 
 
-        
-        # Website confing
-        st.set_page_config(page_title="🎉 Asystent Wieczoru Kawalerskiego Santy", page_icon="🎉")
-        
         # Title
         st.title("🎉 Asystent Wieczoru Kawalerskiego Santy")
         
