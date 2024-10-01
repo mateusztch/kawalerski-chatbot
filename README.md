@@ -1,3 +1,2 @@
-I built a simple chatbot for my friend's bachelor party, using Google Spreadsheets and OpenAI's GPT-3.5. 
-We're heading to Zakopane, Poland, so I designed the chatbot to answer any questions related to the trip for all the participants. 
-To make it even more fun, I had it respond in "góralska gwara" (the local dialect of the Polish highlanders), adding an authentic touch to the experience.
+I organized a bachelor party for a friend and saw it as a great opportunity to create a virtual assistant in the form of a chatbot for the trip's participants. 
+To protect privacy, I have replaced any personal information, such as names, with fictional data.
