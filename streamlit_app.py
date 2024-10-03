@@ -13,23 +13,23 @@ from google.oauth2.service_account import Credentials
 from openai.error import RateLimitError
 
 # Website config
-st.set_page_config(page_title="🎉 Asystent Wieczoru Kawalerskiego Santy", page_icon="🎉")
+st.set_page_config(page_title="🎉 Asystent Wieczoru Kawalerskiego Huberta", page_icon="🎉")
 
 # Authorization status tracking
-if 'authorized' not in st.session_state:
-    st.session_state['authorized'] = False
+#if 'authorized' not in st.session_state:
+#    st.session_state['authorized'] = False
 
 # Password input field that only appears if not authorized
-if not st.session_state['authorized']:
-    password = st.text_input("Wpisz hasło, aby kontynuować:", type="password")
-    if st.button("Zaloguj"):
-        if password == st.secrets["bot_secrets"]["password"]:
-            st.session_state['authorized'] = True
-            st.success("Hasło poprawne. Witaj w chatbocie!")
-        else:
-            st.error("Nieprawidłowe hasło, spróbuj ponownie.")
+#if not st.session_state['authorized']:
+#    password = st.text_input("Wpisz hasło, aby kontynuować:", type="password")
+#    if st.button("Zaloguj"):
+#        if password == st.secrets["bot_secrets"]["password"]:
+#            st.session_state['authorized'] = True
+#            st.success("Hasło poprawne. Witaj w chatbocie!")
+#        else:
+#            st.error("Nieprawidłowe hasło, spróbuj ponownie.")
 
-if st.session_state['authorized']:
+#if st.session_state['authorized']:
     # Title and initial setup if authorized
     st.title("🎉 Asystent Wieczoru Kawalerskiego Santy")
     st.write(
@@ -95,7 +95,7 @@ if st.session_state['authorized']:
     prompt_template = PromptTemplate(
         input_variables=["context", "question"],
         template="""
-Jako asystent wieczoru kawalerskiego Santy, pomóż odpowiedzieć na pytania związane z wyjazdem. Używaj dostarczonych danych z Google Sheets, zwracając szczególną uwagę na nazwy arkuszy i nagłówki kolumn, aby zrozumieć kontekst. Używaj młodzieżowego i swobodnego tonu wypowiedzi, zachowując się przy tym miło. Odpowiadaj na pytania tylko po polsku.
+Jako asystent wieczoru kawalerskiego Huberta, pomóż odpowiedzieć na pytania związane z wyjazdem. Używaj dostarczonych danych z Google Sheets, zwracając szczególną uwagę na nazwy arkuszy i nagłówki kolumn, aby zrozumieć kontekst. Używaj młodzieżowego i swobodnego tonu wypowiedzi, zachowując się przy tym miło. Odpowiadaj na pytania tylko po polsku.
 
 Jeśli nie znasz odpowiedzi na pytanie na podstawie dostępnych danych, grzecznie i krótko poinformuj użytkownika, że na ten moment nie znasz odpowiedzi i poproś o inne pytanie.
 
