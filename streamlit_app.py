@@ -30,7 +30,7 @@ st.set_page_config(page_title="🎉 Asystent Wieczoru Kawalerskiego Huberta", pa
 #            st.error("Nieprawidłowe hasło, spróbuj ponownie.")
 
 # Title and initial setup if authorized
-st.title("🎉 Asystent Wieczoru Kawalerskiego Santy")
+st.title("🎉 Asystent Wieczoru Kawalerskiego Huberta")
 st.write(
     "Prośba o zadanie do max 20 zapytań bo API jest płatne wariaty."
 )
