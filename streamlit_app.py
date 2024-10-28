@@ -28,12 +28,13 @@ if not st.session_state['authorized']:
         if password == st.secrets["bot_secrets"]["password"]:
             st.session_state['authorized'] = True
             st.success("Password correct!")
+            st.experimental_rerun()  
         else:
             st.error("Error. Try again later.")
             st.stop()  
     else:
-        st.stop()
-    
+        st.stop()  
+
 # Title and initial setup if authorized
 st.title("🎉 Hubert's Bachelor Party Assistant")
 st.write(
