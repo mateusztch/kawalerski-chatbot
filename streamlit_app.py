@@ -53,9 +53,9 @@ client = gspread.authorize(creds)
 
 # Loading Google Sheets data
 spreadsheet = client.open('Bachelor-party')
-sheet1 = spreadsheet.worksheet('Co zabrać')
-sheet2 = spreadsheet.worksheet('Plan wyjazdu')
-sheet3 = spreadsheet.worksheet('Koszta')
+sheet1 = spreadsheet.worksheet('packing_list')
+sheet2 = spreadsheet.worksheet('schedule')
+sheet3 = spreadsheet.worksheet('costs')
 sheet4 = spreadsheet.worksheet('Q&A')
 
 # Converting to DataFrames
