@@ -22,13 +22,17 @@ if 'authorized' not in st.session_state:
 # Password input field that only appears if not authorized
 if not st.session_state['authorized']:
     password = st.text_input("Type your password:", type="password")
-    if st.button("Log-in"):
+    login_button = st.button("Log-in")
+
+    if login_button:
         if password == st.secrets["bot_secrets"]["password"]:
             st.session_state['authorized'] = True
             st.success("Password correct!")
         else:
             st.error("Error. Try again later.")
-    st.stop()  
+            st.stop()  
+    else:
+        st.stop()
     
 # Title and initial setup if authorized
 st.title("🎉 Hubert's Bachelor Party Assistant")
