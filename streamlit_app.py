@@ -52,7 +52,7 @@ creds = Credentials.from_service_account_info(credentials_info, scopes=scope)
 client = gspread.authorize(creds)
 
 # Loading Google Sheets data
-spreadsheet = client.open('Kawalerski')
+spreadsheet = client.open('Bachelor-party')
 sheet1 = spreadsheet.worksheet('Co zabrać')
 sheet2 = spreadsheet.worksheet('Plan wyjazdu')
 sheet3 = spreadsheet.worksheet('Koszta')
