@@ -9,7 +9,7 @@ Ofc to ensure privacy, all personal information such as names has been replaced 
 ### Key Features
 - **Google Sheets Integration**: I used Google Sheets as a dynamic database, where I stored and updated important trip details like the schedule, packing list, costs, and even weather forecasts. This setup allowed for **easy, real-time updates** to keep everyone on the same page! (btw the plan was changed a few times, so I had to do quick iterations)
   
-- **LangChain & GPT-3.5 Turbo**: The core of the chatbot is powered by LangChain and OpenAI's GPT-3.5 Turbo, offering a seamless conversational experience to handle a variety of queries from trip participants.
+- **LangChain & GPT-3.5 Turbo**: The core of the chatbot is powered by LangChain and OpenAI's GPT-3.5 Turbo, offering a seamless conversational experience to handle a variety of queries from trip participants. I was working on iterations, trying to find the best temperature and build a clean prompt.
 
 - **Streamlit Interface**: The chatbot's front-end is simply built using Streamlit, which provided interactive user interface for all the trip-related information.
 
