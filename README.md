@@ -4,14 +4,14 @@
 
 While organizing a bachelor party for a friend, I saw a fun and unique opportunity to build a **virtual assistant** in the form of a **chatbot** to help the participants stay informed and organized throughout the trip.
 
-To ensure privacy, all personal information such as names has been replaced with fictional data, so you're seeing a fully anonymized version of the assistant!
+Ofc to ensure privacy, all personal information such as names has been replaced with fictional data, so you're seeing a fully anonymized version of the assistant!
 
 ### Key Features
-- **Google Sheets Integration**: I used Google Sheets as a dynamic database, where I stored and updated important trip details like the schedule, packing list, costs, and even weather forecasts. This setup allowed for **easy, real-time updates** to keep everyone on the same page!
+- **Google Sheets Integration**: I used Google Sheets as a dynamic database, where I stored and updated important trip details like the schedule, packing list, costs, and even weather forecasts. This setup allowed for **easy, real-time updates** to keep everyone on the same page! (btw the plan was changed a few times, so I had to do quick iterations)
   
 - **LangChain & GPT-3.5 Turbo**: The core of the chatbot is powered by LangChain and OpenAI's GPT-3.5 Turbo, offering a seamless conversational experience to handle a variety of queries from trip participants.
 
-- **Streamlit Interface**: The chatbot's front-end is built using Streamlit, which provided a clean and interactive user interface for all the trip-related information.
+- **Streamlit Interface**: The chatbot's front-end is simply built using Streamlit, which provided interactive user interface for all the trip-related information.
 
 ### Technologies Used
 - **LangChain** for building the AI-driven conversation flow
