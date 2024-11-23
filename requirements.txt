@@ -1,12 +1,13 @@
-streamlit==1.25.0  # As per your current version
-langchain==0.0.318  # Latest LangChain version you're using
-openai==0.27.10  # Latest OpenAI package for embeddings and API
-faiss-cpu==1.7.4  # FAISS CPU version for vector similarity
-pypdf==3.15.2  # For PDF handling, if needed
-tiktoken==0.3.0  # Tokenizer for OpenAI models
-gspread==5.7.2  # For Google Sheets API
-gspread-dataframe==3.3.0  # For working with Pandas DataFrames
-google-auth==2.23.3  # Google Authentication for OAuth
-google-auth-oauthlib==1.0.0  # OAuth 2.0 flow handling
-google-auth-httplib2==0.1.0  # HTTP libraries for Google authentication
-pandas==2.0.3  # Data processing library for handling Sheets data
+faiss-cpu==1.7.4
+google-auth==2.23.3
+google-auth-httplib2==0.1.0
+google-auth-oauthlib==1.0.0
+gspread==5.7.2
+gspread-dataframe==3.3.0
+langchain==0.0.318
+openai==0.27.10
+pandas==2.0.3
+pypdf==3.15.2
+streamlit==1.25.0
+tiktoken==0.3.0
+
