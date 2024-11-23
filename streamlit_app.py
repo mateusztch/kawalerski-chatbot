@@ -19,7 +19,7 @@ st.set_page_config(page_title="🎉 Hubert's Bachelor Party Assistant", page_ico
 if 'authorized' not in st.session_state:
     st.session_state['authorized'] = False
 
-# Password input field that only appears if not authorized
+# Password input if not authorized
 if not st.session_state['authorized']:
     password = st.text_input("Type your password:", type="password")
     login_button = st.button("Log-in")
@@ -35,20 +35,20 @@ if not st.session_state['authorized']:
     else:
         st.stop()  
 
-# Title and initial setup if authorized
+# Initial setup if authorized
 st.title("🎉 Hubert's Bachelor Party Assistant")
 st.write(
     "Don't ask too many questions because I'm paying for API calls 🤪"
 )
 
-# Importing API
+# Importing openai API
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 # Initiating LLM
 llm = ChatOpenAI(
     openai_api_key=openai_api_key,
     model_name="gpt-3.5-turbo",
-    temperature=0.4  
+    temperature=0.3  
 )
 
 # Google Sheets API
