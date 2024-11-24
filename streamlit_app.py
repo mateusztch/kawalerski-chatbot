@@ -83,7 +83,9 @@ for df, sheet_name in dfs:
     documents.append(sheet_str)
 
 # Create chunks 
-text_splitter = CharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
+# 2000-char chunks (~500 tokens) with 400-char overlap ensure context continuity and fit well within GPT's 4096-token limit, leaving room for prompts and responses.
+
+text_splitter = CharacterTextSplitter(chunk_size=2000, chunk_overlap=400)
 texts = []
 for doc in documents:
     texts.extend(text_splitter.split_text(doc))
