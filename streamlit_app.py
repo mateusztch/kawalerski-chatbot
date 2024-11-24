@@ -35,16 +35,16 @@ if not st.session_state['authorized']:
     else:
         st.stop()  
 
-# Initial setup if authorized
+# Initial setup - if authorized
 st.title("🎉 Hubert's Bachelor Party Assistant")
 st.write(
     "Don't ask too many questions because I'm paying for API calls 🤪"
 )
 
-# Importing openai API
+# Import openai API
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 
-# Initiating LLM
+# Installation of LLM
 llm = ChatOpenAI(
     openai_api_key=openai_api_key,
     model_name="gpt-3.5-turbo",
@@ -57,24 +57,24 @@ credentials_info = st.secrets["google_credentials"]
 creds = Credentials.from_service_account_info(credentials_info, scopes=scope)
 client = gspread.authorize(creds)
 
-# Loading Google Sheets data
+# Google Sheets data
 spreadsheet = client.open('Bachelor-party')
 sheet1 = spreadsheet.worksheet('packing_list')
 sheet2 = spreadsheet.worksheet('schedule')
 sheet3 = spreadsheet.worksheet('costs')
 sheet4 = spreadsheet.worksheet('Q&A')
 
-# Converting to DataFrames
+# Conversion sheets to DataFrames
 df1 = pd.DataFrame(sheet1.get_all_records())
 df2 = pd.DataFrame(sheet2.get_all_records())
 df3 = pd.DataFrame(sheet3.get_all_records())
 df4 = pd.DataFrame(sheet4.get_all_records())
 dfs = [(df1, 'packing_list'), (df2, 'schedule'), (df3, 'costs'), (df4, 'Q&A')]
 
-# Creating list of docs
+# List of docs
 documents = []
 
-# Iterate over each DataFrame
+# Iterate over each DF
 for df, sheet_name in dfs:
     sheet_str = f"Arkusz: {sheet_name}.\n"
     for index, row in df.iterrows():
@@ -82,7 +82,7 @@ for df, sheet_name in dfs:
         sheet_str += row_str + '\n'
     documents.append(sheet_str)
 
-# Creating chunks
+# Create chunks 
 text_splitter = CharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
 texts = []
 for doc in documents:
@@ -91,7 +91,7 @@ for doc in documents:
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
 vectorstore = FAISS.from_texts(texts, embeddings)
 
-# Creating memory
+# Create chate memory memory
 memory = ConversationBufferMemory(
     memory_key="chat_history", return_messages=True
 )
@@ -156,7 +156,7 @@ if prompt := st.chat_input("Ask a question about Hubert's bachelor party:"):
         except Exception as e:
             st.error("An unexpected error occurred while processing your question. Please try again later.")
 
-# Clearing chat history button
+# Clear chat history button
 if st.button("Clear chat history"):
     st.session_state.messages = []
     st.experimental_rerun()
