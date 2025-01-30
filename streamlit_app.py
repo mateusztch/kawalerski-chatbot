@@ -10,7 +10,7 @@ from langchain.text_splitter import CharacterTextSplitter
 import gspread
 import pandas as pd
 from google.oauth2.service_account import Credentials
-import openai  
+from openai.error import RateLimitError
 
 # Website config
 st.set_page_config(page_title="🎉 Hubert's Bachelor Party Assistant", page_icon="🎉")
